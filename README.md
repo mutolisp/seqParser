@@ -1,0 +1,2 @@
+# seqParser
+DNA sequence parser
