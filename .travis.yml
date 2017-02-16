@@ -4,19 +4,19 @@
 # see the wiki:
 #   https://github.com/craigcitro/r-travis/wiki
 
-language: c
+language: r
+sudo: false
+cache: packages
 
-before_install:
-  - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
-  - chmod 755 ./travis-tool.sh
-  - ./travis-tool.sh bootstrap
-install:
-  - ./travis-tool.sh install_deps
-  - ./travis-tool.sh install_seqParser data.table stringr seqinr dplyr
-script: ./travis-tool.sh run_tests
+r_packages:
+   - data.table
+   - stringr
+   - seqinr
+   - dplyr
 
-after_failure:
-  - ./travis-tool.sh dump_logs
+repos:
+    CRAN: https://cloud.r-project.org
+    ropensci: http://packages.ropensci.org
 
 notifications:
   email:
