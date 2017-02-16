@@ -1,6 +1,8 @@
 # seqParser
 DNA sequence parser
 
+[![Build Status](https://travis-ci.org/mutolisp/seqParser.svg?branch=master)](https://travis-ci.org/mutolisp/seqParser)
+
 ## What does seqParser do
 
 * clip by primers
