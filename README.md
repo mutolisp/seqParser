@@ -22,10 +22,16 @@ related function: ```getCuttedPrimer(primer, len, direction='forward'), grepSeqB
 devtools::install_github(repo = 'mutolisp/seqParser')
 ```
 
+Dependencies: [dplyr](https://cran.r-project.org/package=dplyr), 
+[data.table](https://cran.r-project.org/package=data.table), 
+[stringr](https://cran.r-project.org/package=stringr), 
+[seqinr](https://cran.r-project.org/package=seqinr)
+
 ## Use
 
 Set up original primers
 ```R
+library(seqParser)
 ##### set up primers #####
 fprimer <-  'AGATATTGGAAC[A|T]TTATATTTTATTT[A|T]TGG'
 rprimer <-  'GGAGGATT[C|T]GG[A|T]AATTGATTAGT'
