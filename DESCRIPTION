@@ -1,0 +1,14 @@
+Package: seqParser
+Type: Package
+Title: Parsing DNA sequences (seqParser)
+Version: 0.1.0
+Author: Cheng-Tao Lin
+Maintainer: Cheng-Tao Lin <mutolisp@mail.ncyu.edu.tw>
+Description: Parsing DNA sequences 
+License: GPL v3
+Encoding: UTF-8
+LazyData: true
+Imports: dplyr,
+    data.table,
+    stringr,
+    seqinr
