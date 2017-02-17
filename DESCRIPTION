@@ -12,3 +12,4 @@ Imports: dplyr,
     data.table,
     stringr,
     seqinr
+RoxygenNote: 6.0.1

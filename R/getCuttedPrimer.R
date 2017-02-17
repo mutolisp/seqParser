@@ -1,3 +1,17 @@
+#' getCuttedPrimer 
+#'
+#' @description
+#' Cut primers by specific length
+#'
+#' @param primer input primer
+#' @param len cutted length of primer
+#' @param direction forward/reverse
+#'
+#' @return cutted primer (string)
+#' @examples
+#' fprimer <-  'AGATATTGGAAC[A|T]TTATATTTTATTT[A|T]TGG'
+#' getCuttedPrimer(fprimer, len=11, direction='forward')
+#' 
 getCuttedPrimer <- function(primer, len=11, direction='forward') {
   primer <- unlist(strsplit(primer, "(?=\\[)", perl=TRUE))
   primer <- unlist(strsplit(primer, "(?=\\])", perl=TRUE))

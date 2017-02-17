@@ -1,4 +1,12 @@
-# grep core sequences by specific primer
+#' Grep core sequences by specific primer
+#'
+#' @description
+#'
+#' @param seq a sequence
+#' @param fprimer forward primer
+#' @param rprimer reverse primer
+#'
+#' @return a sequence with primers 
 grepSeqByPrimer <- function(seq, fprimer, rprimer) {
   # if the fprimer is
   fprimer <- str_match(seq, fprimer)[1]

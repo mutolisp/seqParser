@@ -1,3 +1,15 @@
+#' Clean up sequence with primers
+#'
+#' @param fastaFile a fasta file path, ex: /path/to/example.fasta
+#' @param outputFasta output fasta file path, ex: /path/to/export.fasta
+#' @param fprimer forward primer
+#' @param rprimer reverse primer
+#' @param duplinum only select the sequences which duplicate 
+#'        number is greater and equal than `duplinum`
+#' @param fill fill the gap bp with N
+#'
+#' @return data.table format sequence set
+
 outputSeq <- function(fastaFile, outputFasta,
                       fprimer, rprimer, duplinum, fill = TRUE){
   #####
