@@ -15,7 +15,3 @@ a data.table
 \description{
 Import fasta file and convert it into data.table format
 }
-\examples{
-# not run
-read.myfasta('/path/to/example.fasta')
-}

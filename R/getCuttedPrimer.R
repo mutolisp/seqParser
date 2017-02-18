@@ -11,7 +11,7 @@
 #' @examples
 #' fprimer <-  'AGATATTGGAAC[A|T]TTATATTTTATTT[A|T]TGG'
 #' getCuttedPrimer(fprimer, len=11, direction='forward')
-#' 
+#'
 getCuttedPrimer <- function(primer, len=11, direction='forward') {
   primer <- unlist(strsplit(primer, "(?=\\[)", perl=TRUE))
   primer <- unlist(strsplit(primer, "(?=\\])", perl=TRUE))

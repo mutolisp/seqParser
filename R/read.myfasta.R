@@ -2,9 +2,7 @@
 #'
 #' @param fastaFile fasta file path
 #' @return a data.table
-#' @examples
-#' # not run
-#' read.myfasta('/path/to/example.fasta')
+
 `read.myfasta` <- function(fastaFile){
   library(data.table)
   raw.fasta <- seqinr::read.fasta(fastaFile, forceDNAtolower = FALSE,
