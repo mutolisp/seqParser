@@ -1,7 +1,7 @@
 #' Clean up sequence with primers
 #'
-#' @param fastaFile a fasta file path, ex: /path/to/example.fasta
-#' @param outputFasta output fasta file path, ex: /path/to/export.fasta
+#' @param fastaFile a fasta file path
+#' @param outputFasta output fasta file path
 #' @param fprimer forward primer
 #' @param rprimer reverse primer
 #' @param duplinum only select the sequences which duplicate 
@@ -12,6 +12,7 @@
 
 outputSeq <- function(fastaFile, outputFasta,
                       fprimer, rprimer, duplinum, fill = TRUE){
+  library(Biostrings)
   #####
   # output sequence
   # fprimer: forward primer
@@ -49,7 +50,7 @@ outputSeq <- function(fastaFile, outputFasta,
     withPrimerNoDesc[, seqPruned := paste(seqPruned, fn, sep="", collapse=""), by=id]
   }
   for ( i in 1:dim(withPrimerNoDesc)[1] ){
-    seqinr::write.fasta(DNAString(withPrimerNoDesc[i, seqPruned]),
+    seqinr::write.fasta(Biostrings::DNAString(withPrimerNoDesc[i, seqPruned]),
                 names = withPrimerNoDesc[i, id], file.out = outputFasta,
                 open = 'a', nbchar = max(withPrimerNoDesc[, seqPrunedLength]))
   }

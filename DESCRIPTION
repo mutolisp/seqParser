@@ -8,8 +8,10 @@ Description: Parsing DNA sequences
 License: GPL v3
 Encoding: UTF-8
 LazyData: true
-Imports: dplyr,
+Depends: Biostrings,
     data.table,
     stringr,
-    seqinr
+    seqinr,
+    dplyr
+SystemRequirements: ncbi-blast+
 RoxygenNote: 6.0.1
