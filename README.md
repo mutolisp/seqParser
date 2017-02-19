@@ -15,6 +15,8 @@ related function: ```getCuttedPrimer(primer, len, direction='forward'), grepSeqB
 
 ![seqParser](https://github.com/mutolisp/seqParser/raw/master/docs/seqParser2.png)
 
+* [BLAST+](http://blast.ncbi.nlm.nih.gov) wrapper for R
+
 ## Installation
 
 ```R
