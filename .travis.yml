@@ -6,12 +6,17 @@
 
 language: r
 cache: packages
+warnings_are_errors: false
+bioc_required: true
 
 r_packages:
    - data.table
    - stringr
    - seqinr
    - dplyr
+
+bioc_packages:
+    - Biostrings
 
 repos:
     CRAN: https://cloud.r-project.org
