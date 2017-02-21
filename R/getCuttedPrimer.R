@@ -1,4 +1,4 @@
-#' getCuttedPrimer 
+#' getCuttedPrimer
 #'
 #' @description
 #' Cut primers by specific length
@@ -13,12 +13,14 @@
 #' getCuttedPrimer(fprimer, len=11, direction='forward')
 #'
 getCuttedPrimer <- function(primer, len=11, direction='forward') {
-  primer <- unlist(strsplit(primer, "(?=\\[)", perl=TRUE))
-  primer <- unlist(strsplit(primer, "(?=\\])", perl=TRUE))
-  for (i in which(primer == "[" )) {
-    primer[i+1] <- paste(primer[i], primer[i+1], "]", sep="")
+  if ( length(grep('\\[|\\]', primer)) > 0 ){
+    primer <- unlist(strsplit(primer, "(?=\\[)", perl=TRUE))
+    primer <- unlist(strsplit(primer, "(?=\\])", perl=TRUE))
+    for (i in which(primer == "[" )) {
+      primer[i+1] <- paste(primer[i], primer[i+1], "]", sep="")
+    }
+    primer <- primer[-which(primer=="["| primer=="]")]
   }
-  primer <- primer[-which(primer=="["| primer=="]")]
   # split DNA sequences
   # 把沒有 regular expression 表示的 bp,
   # 即沒有 "[" "]" 和 "|" 的找出來
@@ -26,6 +28,7 @@ getCuttedPrimer <- function(primer, len=11, direction='forward') {
     res <- grep("\\[|\\]|\\|", x, useBytes = TRUE)
     return(res)
   }
+
   primerCont = list()
   for ( i in 1:length(primer) ) {
     if ( length(grepRegexp(primer[i])) == 0 ) {
