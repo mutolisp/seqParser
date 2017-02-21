@@ -15,6 +15,8 @@ related function: ```getCuttedPrimer(primer, len, direction='forward'), grepSeqB
 
 ![seqParser](https://github.com/mutolisp/seqParser/raw/master/docs/seqParser2.png)
 
+* [BLAST+](http://blast.ncbi.nlm.nih.gov) wrapper for R
+
 ## Installation
 
 ```R
@@ -22,7 +24,7 @@ related function: ```getCuttedPrimer(primer, len, direction='forward'), grepSeqB
 devtools::install_github(repo = 'mutolisp/seqParser')
 ```
 
-Dependencies: [dplyr](https://cran.r-project.org/package=dplyr), 
+Dependencies: [dplyr](https://cran.r-project.org/package=dplyr), [Biostrings](https://bioconductor.org/packages/release/bioc/html/Biostrings.html),
 [data.table](https://cran.r-project.org/package=data.table), 
 [stringr](https://cran.r-project.org/package=stringr), 
 [seqinr](https://cran.r-project.org/package=seqinr)
@@ -53,3 +55,19 @@ ex.fasta <- outputSeq(fastaFile = 'example.fasta',
                  duplinum = 5, 
                  fill = TRUE)
 ```
+
+Blast+ (you need to install NCBI blast first)
+```R
+# make blast database
+makeblastdb(input = 'example.fasta',
+            dbtype='nucl', title='example', out='/tmp/out/ab')
+
+# blast: blast(type='blastn', ...) or blast(type='blastx', ...)
+blast(type='blastn', query='query.fasta',
+      db = '/path/to/the/sdb', out = '/tmp/output.txt',
+      task='megablast', evalue=1, max_target_seqs=20, num_threads=8,
+
+```
+
+
+
