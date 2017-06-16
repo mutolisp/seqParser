@@ -59,7 +59,7 @@ outputSeq <- function(fastaFile, outputFasta,
   } else {
     givenPrimerNoDesc <- withPrimerNoDesc[withPrimerNoDesc[, seqPrunedLength >= reqMin & seqPrunedLength <= reqMax],]
     # excluded sequences
-    excludedWithPrimerNoDesc <- withPrimerNoDesc[withPrimerNoDesc[, seqPrunedLength < reqMin || seqPrunedLength > reqMax],]
+    excludedWithPrimerNoDesc <- withPrimerNoDesc[withPrimerNoDesc[, (seqPrunedLength < reqMin | seqPrunedLength > reqMax)],]
   }
   # sort sequences
   givenPrimerNoDesc <- setkeyv(givenPrimerNoDesc, sortMatrix[sort])
