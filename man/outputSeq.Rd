@@ -4,21 +4,26 @@
 \alias{outputSeq}
 \title{Clean up sequence with primers}
 \usage{
-outputSeq(fastaFile, outputFasta, fprimer, rprimer, duplinum, fill = TRUE)
+outputSeq(fastaFile, outputFasta, fprimer, rprimer, duplinum, srange,
+  sort = 4)
 }
 \arguments{
-\item{fastaFile}{a fasta file path, ex: /path/to/example.fasta}
+\item{fastaFile}{a fasta file path}
 
-\item{outputFasta}{output fasta file path, ex: /path/to/export.fasta}
+\item{outputFasta}{output fasta file path}
 
 \item{fprimer}{forward primer}
 
 \item{rprimer}{reverse primer}
 
-\item{duplinum}{only select the sequences which duplicate 
+\item{duplinum}{only select the sequences which duplicate
 number is greater and equal than `duplinum`}
 
-\item{fill}{fill the gap bp with N}
+\item{srange}{minimum and maximum values of prunned sequence length, ex:
+c(20, 150) means the minimum number is 20 and maximum number is 150}
+
+\item{sort}{sort output table by id (1), pruned sequence (2),
+duplicates (3) or pruned sequence length (4)}
 }
 \value{
 data.table format sequence set
