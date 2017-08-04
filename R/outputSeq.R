@@ -14,7 +14,7 @@
 #'
 #' @return data.table format sequence set
 
-outputSeq <- function(fastaFile, outputFasta,
+outputSeq <- function(fastaFile, outputFasta, batchName,
                       fprimer, rprimer, duplinum, srange, sort = 4){
   library(Biostrings)
   #####
@@ -45,7 +45,7 @@ outputSeq <- function(fastaFile, outputFasta,
   withPrimerNoDesc <- withPrimerNoDesc[order(-rank(duplicates), -rank(seqPrunedLength), seqPruned)]
   withPrimerNoDesc <- withPrimerNoDesc[duplicates >= duplinum]
   # append duplicate numbers
-  withPrimerNoDesc[, id:= paste(.I, duplicates, sep = "_")]
+  withPrimerNoDesc[, id:= paste(batchName, .I, duplicates, sep = "_")]
 
   # select specific range of sequence length
   maxPrunedLength <- max(withPrimerNoDesc$seqPrunedLength)
