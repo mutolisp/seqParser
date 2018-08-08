@@ -15,6 +15,7 @@ mothur(binPath, subfunc, ...)
 mothur nucleotide
 }
 \examples{
+\dontrun{
 mothurDir <- '~/Downloads/mothur/'
 fastaFile <-  './1060501B_cut3_without_N.fas'
 
@@ -28,4 +29,5 @@ mothur(mothurDir, subfunc='cluster',
        method='furthest',cutoff=0.03)
 mothur(mothurDir, subfunc='bin.seqs',
        list=listFile, fasta=fastaFile)
+}
 }

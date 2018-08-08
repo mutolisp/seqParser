@@ -5,6 +5,7 @@
 #' @param subfunc query sequences
 #'
 #' @examples
+#' \dontrun{
 #' mothurDir <- '~/Downloads/mothur/'
 #' fastaFile <-  './1060501B_cut3_without_N.fas'
 #'
@@ -18,6 +19,7 @@
 #'        method='furthest',cutoff=0.03)
 #' mothur(mothurDir, subfunc='bin.seqs',
 #'        list=listFile, fasta=fastaFile)
+#' }
 
 
 `mothur` <- function(binPath, subfunc, ...){
