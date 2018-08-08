@@ -14,4 +14,4 @@ Depends: Biostrings,
     seqinr,
     dplyr
 SystemRequirements: ncbi-blast+
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0

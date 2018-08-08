@@ -4,7 +4,8 @@
 \alias{makeblastdb}
 \title{make blastdb}
 \usage{
-makeblastdb(input, dbtype, parse_seqids = TRUE, hash_index = FALSE, ...)
+makeblastdb(input, dbtype, parse_seqids = TRUE, hash_index = FALSE,
+  ...)
 }
 \arguments{
 \item{input}{input file}

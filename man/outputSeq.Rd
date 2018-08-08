@@ -4,8 +4,8 @@
 \alias{outputSeq}
 \title{Clean up sequence with primers}
 \usage{
-outputSeq(fastaFile, outputFasta, fprimer, rprimer, duplinum, srange,
-  sort = 4)
+outputSeq(fastaFile, outputFasta, batchName, fprimer, rprimer, duplinum,
+  srange, sort = 4)
 }
 \arguments{
 \item{fastaFile}{a fasta file path}
