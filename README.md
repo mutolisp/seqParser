@@ -3,6 +3,8 @@ DNA sequence parser
 
 [![Build Status](https://travis-ci.org/mutolisp/seqParser.svg?branch=master)](https://travis-ci.org/mutolisp/seqParser)
 
+[![DOI](https://zenodo.org/badge/82152043.svg)](https://zenodo.org/badge/latestdoi/82152043)
+
 ## What does seqParser do
 
 * clip by primers
@@ -69,5 +71,7 @@ blast(type='blastn', query='query.fasta',
 
 ```
 
+## Citation
 
+Cheng-Tao Lin (2018) seqParser: R package for DNA sequence parsing. URL: https://github.com/mutolisp/seqParser DOI: 10.5281/zenodo.1493692
 
